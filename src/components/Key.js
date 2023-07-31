@@ -1,11 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import './Key.css'
 
 
 const Key = (props) => {
     const [isActive, setIsActive] = useState(false)
 
-    const playAudio = (selector) => {
+    const playAudio = useCallback((selector) => {
         if(isActive === false){ 
             const audio = document.getElementById(selector);
             audio.currentTime = 0;
@@ -16,9 +16,9 @@ const Key = (props) => {
 
             setTimeout(()=>{
                 setIsActive(false)
-            },100)
+            },1)
         }
-    };
+    },[isActive, props.volume, props.setText]);
 
     useEffect(()=>{
         const handleKeyPress = (event) => {
