@@ -5,9 +5,9 @@ import './Key.css'
 const Key = (props) => {
     const [isActive, setIsActive] = useState(false)
 
-    const playAudio = useCallback((selector) => {
+    const playAudio = useCallback(() => {
         if(isActive === false){ 
-            const audio = document.getElementById(selector);
+            const audio = document.getElementById(props.char);
             audio.currentTime = 0;
             audio.volume = props.volume / 100;
             audio.play();
@@ -16,9 +16,9 @@ const Key = (props) => {
 
             setTimeout(()=>{
                 setIsActive(false)
-            },1)
+            },50)
         }
-    },[isActive, props.volume, props.setText]);
+    },[isActive, props.volume, props.setText, props.char]);
 
     useEffect(()=>{
         const handleKeyPress = (event) => {
@@ -33,7 +33,7 @@ const Key = (props) => {
     },[props.volume, props.char, playAudio])
 
     return(
-        <button className={`key drum-pad ${isActive ? 'active' : ''}`} id={props.id} key={props.id} onClick={()=>{playAudio(props.char)}}>
+        <button className={`key drum-pad ${isActive ? 'active' : ''}`} id={props.id} key={props.id} onClick={()=>{playAudio()}}>
             {props.char} 
             <audio id={props.char} className='clip' src={props.aud} data-name={props.id}/>
         </button>
