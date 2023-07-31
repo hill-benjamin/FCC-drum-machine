@@ -2,40 +2,40 @@ import React, { useState, useEffect, useCallback } from 'react';
 import './Key.css'
 
 
-const Key = (props) => {
+const Key = ({volume, char, id, key, aud, setText}) => {
     const [isActive, setIsActive] = useState(false)
 
     const playAudio = useCallback(() => {
         if(isActive === false){ 
-            const audio = document.getElementById(props.char);
+            const audio = document.getElementById(char);
             audio.currentTime = 0;
-            audio.volume = props.volume / 100;
+            audio.volume = volume / 100;
             audio.play();
-            props.setText(audio.dataset.name)
+            setText(audio.dataset.name)
             setIsActive(true);
 
             setTimeout(()=>{
                 setIsActive(false)
             },50)
         }
-    },[isActive, props.volume, props.setText, props.char]);
+    },[isActive, volume, setText, char]);
 
     useEffect(()=>{
         const handleKeyPress = (event) => {
             const keyPressed = event.key.toUpperCase();
-            if (keyPressed === props.char){playAudio(props.char)};
+            if (keyPressed === char){playAudio(char)};
           };
        
             document.addEventListener('keydown', handleKeyPress);
             return()=>{
                 document.removeEventListener('keydown',handleKeyPress);
             };
-    },[props.volume, props.char, playAudio])
+    },[volume, char, playAudio])
 
     return(
-        <button className={`key drum-pad ${isActive ? 'active' : ''}`} id={props.id} key={props.id} onClick={()=>{playAudio()}}>
-            {props.char} 
-            <audio id={props.char} className='clip' src={props.aud} data-name={props.id}/>
+        <button className={`key drum-pad ${isActive ? 'active' : ''}`} id={id} key={id} onClick={()=>{playAudio()}}>
+            {char} 
+            <audio id={char} className='clip' src={aud} data-name={id}/>
         </button>
     )
 }
