@@ -30,7 +30,7 @@ const Key = (props) => {
             return()=>{
                 document.removeEventListener('keydown',handleKeyPress);
             };
-    },[props.volume, props.char])
+    },[props.volume, props.char, playAudio])
 
     return(
         <button className={`key drum-pad ${isActive ? 'active' : ''}`} id={props.id} key={props.id} onClick={()=>{playAudio(props.char)}}>
