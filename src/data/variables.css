@@ -1,0 +1,18 @@
+:root{
+    --black:rgb(7, 7, 7);
+    --white:rgb(219, 219, 219);
+    --green:rgb(81, 160, 81);
+    --green-tech:rgb(48, 212, 33);
+    --gray:rgb(143, 143, 143);
+    --light-gray:rgb(173, 173, 173);
+    --blue:rgb(48, 48, 160);
+    --orange:rgb(224, 85, 20);
+    --yellow:rgb(224, 194, 25);
+    --purple:rgb(121, 13, 121);
+    --brown:rgb(78, 53, 31);
+    --olive:rgb(119, 119, 33);
+    --navy-blue:rgb(20, 20, 83);
+    --coral:rgb(243, 139, 101);
+    --pink:rgb(233, 162, 174);
+    --cyan:rgb(54, 223, 223);
+}

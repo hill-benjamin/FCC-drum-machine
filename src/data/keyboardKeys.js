@@ -1,0 +1,49 @@
+const keyboardKeys = [ 
+    {  
+        char:'Q',
+        id:'heater-1',
+        aud:'https://s3.amazonaws.com/freecodecamp/drums/Heater-1.mp3'
+    },
+    {  
+        char:'W',
+        id:'heater-2',
+        aud:'https://s3.amazonaws.com/freecodecamp/drums/Heater-2.mp3'
+    },
+    {  
+        char:'E',
+        id:'heater-3',
+        aud:'https://s3.amazonaws.com/freecodecamp/drums/Heater-3.mp3'
+    },
+    {  
+        char:'A',
+        id:'heater-4',
+        aud:'https://s3.amazonaws.com/freecodecamp/drums/Heater-4_1.mp3'
+    },
+    {  
+        char:'S',
+        id:'clap',
+        aud:'https://s3.amazonaws.com/freecodecamp/drums/Heater-6.mp3'
+    },
+    {  
+        char:'D',
+        id:'open-hi-hat',
+        aud:'https://s3.amazonaws.com/freecodecamp/drums/Dsc_Oh.mp3'
+    },
+    {  
+        char:'Z',
+        id:'kick-n-hat',
+        aud:'https://s3.amazonaws.com/freecodecamp/drums/Kick_n_Hat.mp3'
+    },
+    {  
+        char:'X',
+        id:'kick',
+        aud:'https://s3.amazonaws.com/freecodecamp/drums/RP4_KICK_1.mp3'
+    },
+    {  
+        char:'C',
+        id:'hi-hat',
+        aud:'https://s3.amazonaws.com/freecodecamp/drums/Cev_H2.mp3'
+    }
+]
+
+export default keyboardKeys;

@@ -1,0 +1,21 @@
+@import '../data/variables.css';
+
+.key{
+    background-color: var(--gray);
+    box-shadow: 1px 1px 3px 1px var(--black);
+    font-weight: bold;
+    text-transform: uppercase;
+    width: 100px;
+    height: 80px;
+    margin: 6px;
+    cursor: pointer;
+}
+
+.active{
+    background-color: var(--yellow);
+}
+
+button{
+    cursor: default !important;
+}
+
